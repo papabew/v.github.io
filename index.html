@@ -11,15 +11,15 @@
 <nav>
 	<h2 class="nav-logo">VINCE<span class="fa fa-bars nav-btn" id="navBtn"></span></h2>
 	<ul id="navigation">
-		<li><a href="#home" class="link active">HOME</a></li>
-		<li><a href="#about" class="link">ABOUT</a></li>
-		<li><a href="#skills" class="link">SKILLS</a></li>
-		<li><a href="#experience" class="link">EXPERIENCE</a></li>
-		<li><a href="#contact" class="link">CONTACT</a></li>
+		<li><a href="#home" class="home-marker active">HOME</a></li>
+		<li><a href="#about" class="about-marker">ABOUT</a></li>
+		<li><a href="#skills" class="skills-marker">SKILLS</a></li>
+		<li><a href="#experience" class="experience-marker">EXPERIENCE</a></li>
+		<li><a href="#contact" class="contact-marker">CONTACT</a></li>
 	</ul>
 </nav>
 
-<header class="header-bg" id="home">
+<header class="header-bg pages" id="home">
 	<div class="header-text">
 		<h1>I<i>'</i>M</h1>
 		<h1>VINCE<i>.</i></h1>
@@ -28,7 +28,7 @@
 	</div>
 </header>
 
-<section id="about"> 
+<section id="about" class="pages hidden"> 
 	<h1 class="page-title">ABOUT ME</h1>
 	<div class="container">
 		<div class="row">
@@ -44,13 +44,13 @@
 					<li><strong>EMAIL</strong> <span>johnvincentbernabe@gmail.com</span></li>
 					<li><strong>CONTACT</strong> <span>09XX-XXX-XXXX</span></li>
 				</ul>
-				<a href="#" class="resume-btn">DOWNLOAD RESUME</a>
+				<a href="javascript:void(0)" class="resume-btn">DOWNLOAD RESUME</a>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section id="skills">
+<section id="skills" class="pages hidden">
 	<h1 class="page-title">SKILLS</h1>
 	<div class="container">
 		<di class="row">
@@ -207,7 +207,7 @@
 	</div>
 </section>
 
-<section id="experience">
+<section id="experience" class="pages hidden">
 	<h1 class="page-title">WORK EXPERIENCE</h1>
 	<div class="container">
 		<div class="row">
@@ -226,9 +226,9 @@
 	</div>
 </section>
 
-<footer id="contact">
+<footer id="contact" class="pages hidden">
+	<h1 class="page-title">CONTACT ME</h1>
 	<div class="footer-container">
-		<h1 class="page-title">CONTACT ME</h1>
 		<div class="contact-pane">
 			<form>
 				<div class="form-group">

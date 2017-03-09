@@ -15,33 +15,36 @@ $(document).ready(function() {
 	});
 
 	var doc = $(document),
-		headerBg = $(".header-bg");
-	var home = $("#home").offset().top;
-	var about = $("#about").offset().top;
-	var skills = $("#skills").offset().top;
-	var expi = $("#experience").offset().top;
-	var contact = $("#contact").offset().top;
+		headerBg = $(".header-bg"),
+		pages = $(".pages"),
+		navHeight = $("nav").height(),
+		links = $("nav ul li a");
 
 	doc.scroll(function(){
 		var currScrollPos = doc.scrollTop();
-		
-		var navLink = $("a[href^='#']");
-		if (currScrollPos >= about && currScrollPos <= about+20) {
-			navLink.removeClass("active");
-		}
+		pages.each(function() {	
+			var self = $(this);
+
+			if (self.offset().top < (currScrollPos + navHeight) + 1
+				&& (currScrollPos + navHeight) + 1 < (self.offset().top + self.outerHeight())) {
+				
+				var target = '.' + self.attr("id") + "-marker";
+				links.removeClass("active");
+				$(target).addClass("active");
+
+				var targetPage = "#" + self.attr("id");
+				if ($(targetPage).hasClass("hidden")) $(targetPage).removeClass("hidden");
+			}	
+		});
 	});
 
-	console.log(doc.scrollTop());
-
-	var navHeight = $("nav").outerHeight();
-
-	$("a[href^='#']").click(function(e){
+	links.click(function(e){
 		var page = $(this).attr("href");
 		$("html, body").animate({
 			scrollTop: $(page).offset().top - navHeight
 		}, 500, "linear");
 
-		$(".link").removeClass("active");
+		links.removeClass("active");
 		$(this).addClass("active");
 
 		e.preventDefault();
