@@ -1,18 +1,17 @@
 $(document).ready(function() {
-
-	$(".overlay").css("display", "none");
-	window.onbeforeunload = function(){
+    
+	window.onbeforeunload = function() {
 		window.scrollTo(0,0);
 	};
 
 	//small devices navigation toggle
 	var menu = $("#navigation");
-	$("#navBtn").click(function(){
+	$("#navBtn").click(function() {
 		menu.slideToggle();
 	});
 
 	//window resize navigation show
-	$(window).resize(function(){
+	$(window).resize(function() {
 		var width = $(document).width();
 		if (width >= 768 && menu.is(':hidden')) {
 			menu.css('display', '');
@@ -29,7 +28,7 @@ $(document).ready(function() {
 
 		
 
-	doc.scroll(function(){
+	doc.scroll(function() {
 		var currScrollPos = doc.scrollTop();
 		pages.each(function() {	
 		var self = $(this);
@@ -41,7 +40,7 @@ $(document).ready(function() {
 			links.removeClass("active");
 			$(target).addClass("active");
 
-			if(self.attr("id") == "skills"){
+			if(self.attr("id") == "skills")  {
 				$(".small-bar-fill").removeClass("zero-width");
 			}
 
@@ -56,7 +55,7 @@ $(document).ready(function() {
 
 	});
 
-	links.click(function(e){
+	links.click(function(e) {
 		var page = $(this).attr("href");
 		$("html, body").animate({
 			scrollTop: $(page).offset().top - navHeight
@@ -69,7 +68,7 @@ $(document).ready(function() {
 
 
 
-	$('input, textarea').blur(function(){
+	$('input, textarea').blur(function() {
 
 		console.log($(this).val());
 
