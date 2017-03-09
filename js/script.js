@@ -52,8 +52,6 @@ $(document).ready(function() {
 			var targetPage = "#" + self.attr("id");
 			if ($(targetPage).hasClass("hidden")) $(targetPage).removeClass("hidden");
 		}
-
-
 	});
 
 	});
