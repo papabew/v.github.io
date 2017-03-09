@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+	$(".overlay").css("display", "none");
+	window.onbeforeunload = function(){
+		window.scrollTo(0,0);
+	};
+
 	//small devices navigation toggle
 	var menu = $("#navigation");
 	$("#navBtn").click(function(){
@@ -14,28 +19,43 @@ $(document).ready(function() {
 		}
 	});
 
+
 	var doc = $(document),
 		headerBg = $(".header-bg"),
 		pages = $(".pages"),
 		navHeight = $("nav").height(),
-		links = $("nav ul li a");
+		links = $("nav ul li a"),
+		currScrollPos = doc.scrollTop();
+
+		
 
 	doc.scroll(function(){
 		var currScrollPos = doc.scrollTop();
 		pages.each(function() {	
-			var self = $(this);
+		var self = $(this);
 
-			if (self.offset().top < (currScrollPos + navHeight) + 1
-				&& (currScrollPos + navHeight) + 1 < (self.offset().top + self.outerHeight())) {
-				
-				var target = '.' + self.attr("id") + "-marker";
-				links.removeClass("active");
-				$(target).addClass("active");
+		if (self.offset().top < (currScrollPos + navHeight) + 1
+			&& (currScrollPos + navHeight) + 1 < (self.offset().top + self.outerHeight())) {
+			
+			var target = '.' + self.attr("id") + "-marker";
+			links.removeClass("active");
+			$(target).addClass("active");
 
-				var targetPage = "#" + self.attr("id");
-				if ($(targetPage).hasClass("hidden")) $(targetPage).removeClass("hidden");
-			}	
-		});
+			if(self.attr("id") == "skills"){
+				$(".small-bar-fill").removeClass("zero-width");
+			}
+
+		}	
+
+		if (self.offset().top < (currScrollPos + navHeight) + navHeight) {
+
+			var targetPage = "#" + self.attr("id");
+			if ($(targetPage).hasClass("hidden")) $(targetPage).removeClass("hidden");
+		}
+
+
+	});
+
 	});
 
 	links.click(function(e){

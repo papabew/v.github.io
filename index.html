@@ -7,7 +7,39 @@
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
 </head>
 <body>
+<style type="text/css">
+	.overlay{
+		height: 100%;
+		width: 100%;
+		background: #fff;
+		position:fixed;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.spinner{
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		border: 2px solid #424242;
+		border-bottom: 2px solid #FF5722;
+		animation: spin 1s infinite linear;
+	}
 
+	@keyframes spin{
+		from
+		{ transform: rotate(0deg); }
+		to
+		{ transform: rotate(360deg); }
+	}
+</style>
+<div class="overlay">
+	<div class="spinner"></div>
+</div>
 <nav>
 	<h2 class="nav-logo">VINCE<span class="fa fa-bars nav-btn" id="navBtn"></span></h2>
 	<ul id="navigation">
@@ -155,7 +187,7 @@
 					</div>	
 					<div class="col-12 small-bar-container">
 						<div class="small-bar-frame">
-							<span class="small-bar-fill will"><span class="percent">90%</span></span>
+							<span class="small-bar-fill zero-width will"><span class="percent">90%</span></span>
 						</div>
 					</div>
 				</div>
@@ -166,7 +198,7 @@
 					</div>	
 					<div class="col-12 small-bar-container">
 						<div class="small-bar-frame">
-							<span class="small-bar-fill teamp"><span class="percent">75%</span></span>
+							<span class="small-bar-fill zero-width teamp"><span class="percent">75%</span></span>
 						</div>
 					</div>
 				</div>
@@ -177,7 +209,7 @@
 					</div>	
 					<div class="col-12 small-bar-container">
 						<div class="small-bar-frame">
-							<span class="small-bar-fill selfm"><span class="percent">80%</span></span>
+							<span class="small-bar-fill zero-width selfm"><span class="percent">80%</span></span>
 						</div>
 					</div>
 				</div>
@@ -188,7 +220,7 @@
 					</div>	
 					<div class="col-12 small-bar-container">
 						<div class="small-bar-frame">
-							<span class="small-bar-fill crea"><span class="percent">50%</span></span>
+							<span class="small-bar-fill zero-width crea"><span class="percent">50%</span></span>
 						</div>
 					</div>
 				</div><div class="row">
@@ -197,7 +229,7 @@
 					</div>	
 					<div class="col-12 small-bar-container last-small-bar">
 						<div class="small-bar-frame">
-							<span class="small-bar-fill adapt"><span class="percent">70%</span></span>
+							<span class="small-bar-fill zero-width adapt"><span class="percent">70%</span></span>
 						</div>
 					</div>
 				</div>
