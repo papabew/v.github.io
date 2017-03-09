@@ -66,7 +66,6 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-    console.log($("input, textarea"));
 
 	$("input, textarea").blur(function() {
 
