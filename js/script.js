@@ -64,7 +64,6 @@ $(document).ready(function() {
 
 		links.removeClass("active");
 		$(this).addClass("active");
-
 		e.preventDefault();
 	});
 
