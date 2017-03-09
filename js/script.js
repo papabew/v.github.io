@@ -77,6 +77,31 @@ $(document).ready(function() {
 		else 
 			$(this).removeClass("used");
 	});
+    
+    $("#submit").submit(function(e) {
+        
+        var name = $("#name"),
+            email = $("#email"),
+            subject = $("#subject"),
+            message = $("#message");
+        
+        if(!name.val || !email.val || !subject.val || !message.val) {
+            alert("All fields must not empty!");
+        } else {
+            e.preventDefault();
+            $(this).get(0).reset();
+            alert("Message sent!");
+            
+            $.ajax({
+                url: "https://formspree.io/papab3w@gmail.com", 
+                method: "POST",
+                data: $(this).serialize(),
+                dataType: "json"
+            });
+            
+        }
+                
+    });
 
 
 
