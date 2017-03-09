@@ -8,7 +8,7 @@ $(document).ready(function () {
         
         if(loading >= 100) {
             clearInterval(id);
-            window.open("welcome.html", "_self");
+            window.open("welcome.php", "_self");
         } else {
             loading = loading + 1;
             if(loading == 90) {

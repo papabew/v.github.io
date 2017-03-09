@@ -1,3 +1,20 @@
+<?php
+
+if(isset($_POST['name']) && isset($_POST['email'])
+   && isset($_POST['subject']) && isset($_POST['message'])) {
+    
+    $to = 'papb3w@gmail.com';
+    $subject = $_POST['name'];
+    $message = $_POST['message'];
+    $headers = 'From: '. $_POST['email'] . "\r\n" .
+    'Reply-To: ' . $_POST['email'] . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+    
+    mail($to, $subject, $message, $headers); 
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -230,7 +247,7 @@
 	<h1 class="page-title">CONTACT ME</h1>
 	<div class="footer-container">
 		<div class="contact-pane">
-			<form>
+			<form method="post">
 				<div class="form-group">
 					<div class="text-group">
 						<input type="text" name="name" maxlength="37" required autocomplete="off">
