@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	doc.scroll(function(){
 		var currScrollPos = doc.scrollTop();
-		headerBg.css('background-position', '50% ' + -currScrollPos/4 + 'px');
+		
 		var navLink = $("a[href^='#']");
 		if (currScrollPos >= about && currScrollPos <= about+20) {
 			navLink.removeClass("active");
