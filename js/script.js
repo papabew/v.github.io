@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#overlay").fadeOut(200);
+	$("#overlay").delay(750).fadeOut(200);
     window.scrollTo(0,0);
 
 	//small devices navigation toggle
