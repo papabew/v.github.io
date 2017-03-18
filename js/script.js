@@ -1,8 +1,12 @@
+
+//$(window).load(function() {
+//	$("#overlay").fadeOut(5000);
+//});
+
 $(document).ready(function() {
-    
-	window.onbeforeunload = function() {
-		window.scrollTo(0,0);
-	};
+	
+    window.scrollTo(0,0);
+	$("#overlay").fadeOut(2000);
 
 	//small devices navigation toggle
 	var menu = $("#navigation");
@@ -99,6 +103,7 @@ $(document).ready(function() {
         }
                 
     });
+
 
 
 
