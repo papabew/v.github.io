@@ -4,9 +4,8 @@
 //});
 
 $(document).ready(function() {
-	
+	$("#overlay").fadeOut(200);
     window.scrollTo(0,0);
-	$("#overlay").fadeOut(2000);
 
 	//small devices navigation toggle
 	var menu = $("#navigation");
