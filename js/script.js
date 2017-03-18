@@ -1,8 +1,3 @@
-
-//$(window).load(function() {
-//	$("#overlay").fadeOut(5000);
-//});
-
 $(document).ready(function() {
 	$("#overlay").fadeOut(200);
     window.scrollTo(0,0);
